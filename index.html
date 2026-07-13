@@ -179,7 +179,7 @@
   .scroll-hint .line{width:1px;height:44px;background:rgba(255,255,255,0.5);}
 
   /* ================= SECTIONS GENERIC ================= */
-  section{padding:88px 0;}
+  section{padding:88px 0;scroll-margin-top:84px;}
   @media(min-width:768px){section{padding:128px 0;}}
   .section-alt{background:var(--paper);}
   .section-head{max-width:640px;margin-bottom:56px;}
@@ -278,7 +278,7 @@
   .about-wrap{display:grid;grid-template-columns:1fr;gap:48px;align-items:center;}
   @media(min-width:900px){.about-wrap{grid-template-columns:1fr 1fr;gap:80px;}}
   .about-photo{border-radius:18px;overflow:hidden;aspect-ratio:16/11;box-shadow:var(--shadow);}
-  .about-photo img{width:100%;height:100%;object-fit:cover;}
+  .about-photo img{width:100%;height:100%;object-fit:cover;object-position:center 30%;}
   .about-quote{font-family:'Fraunces',serif;font-style:italic;font-size:24px;line-height:1.5;color:var(--black);font-weight:400;}
   @media(min-width:768px){.about-quote{font-size:29px;}}
   .about-quote .red{color:var(--red);}
@@ -358,7 +358,7 @@
       <a href="#ueber-mich">Über mich</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
-    <a href="mailto:hinahina112317@gmail.com?subject=Tour-Anfrage&body=Hallo Hina,%0D%0A%0D%0Aich m%C3%B6chte gerne eine Tour buchen.%0D%0A%0D%0AName:%0D%0AWunschdatum:%0D%0APersonenanzahl:%0D%0A%0D%0AViele Gr%C3%BC%C3%9Fe" class="btn btn-primary nav-cta">Jetzt buchen</a>
+    <a href="#kontakt" class="btn btn-primary nav-cta">Kontakt aufnehmen</a>
     <button class="burger" id="burger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
   </div>
 </header>
@@ -368,7 +368,7 @@
   <a href="#preis">Preis</a>
   <a href="#ueber-mich">Über mich</a>
   <a href="#kontakt">Kontakt</a>
-  <a href="mailto:hinahina112317@gmail.com?subject=Tour-Anfrage&body=Hallo Hina,%0D%0A%0D%0Aich m%C3%B6chte gerne eine Tour buchen.%0D%0A%0D%0AName:%0D%0AWunschdatum:%0D%0APersonenanzahl:%0D%0A%0D%0AViele Gr%C3%BC%C3%9Fe" class="btn btn-primary" style="margin-top:12px;width:fit-content;">Jetzt buchen</a>
+  <a href="#kontakt" class="btn btn-primary" style="margin-top:12px;width:fit-content;">Kontakt aufnehmen</a>
 </div>
 
 <main id="top">
@@ -381,7 +381,7 @@
       <h1>Entdecke das echte Tokio mit einer lokalen Japanerin.</h1>
       <p>Keine typischen Touristenorte – sondern das authentische Tokio, das nur Einheimische kennen.</p>
       <div class="hero-actions">
-        <a href="mailto:hinahina112317@gmail.com?subject=Tour-Anfrage&body=Hallo Hina,%0D%0A%0D%0Aich m%C3%B6chte gerne eine Tour buchen.%0D%0A%0D%0AName:%0D%0AWunschdatum:%0D%0APersonenanzahl:%0D%0A%0D%0AViele Gr%C3%BC%C3%9Fe" class="btn btn-primary">Jetzt buchen</a>
+        <a href="#kontakt" class="btn btn-primary">Kontakt aufnehmen</a>
         <a href="#tour" class="btn btn-outline" style="border-color:rgba(255,255,255,0.5);color:#fff;">Die Tour ansehen</a>
       </div>
     </div>
@@ -455,7 +455,7 @@
             <div class="price-amount"><sup>¥</sup>40.000</div>
             <div class="price-meta">4 Stunden · bis zu 5 Personen</div>
           </div>
-          <a href="mailto:hinahina112317@gmail.com?subject=Tour-Anfrage&body=Hallo Hina,%0D%0A%0D%0Aich m%C3%B6chte gerne eine Tour buchen.%0D%0A%0D%0AName:%0D%0AWunschdatum:%0D%0APersonenanzahl:%0D%0A%0D%0AViele Gr%C3%BC%C3%9Fe" class="btn btn-light" style="margin-top:0;">Jetzt buchen</a>
+          <a href="#kontakt" class="btn btn-light" style="margin-top:0;">Kontakt aufnehmen</a>
         </div>
         <div class="price-divider"></div>
         <div class="price-solo">Du reist allein? <b>Preis auf Anfrage.</b> Bitte kontaktiere mich – ich finde eine faire Lösung für dich.</div>
@@ -535,58 +535,11 @@
     </div>
   </section>
 
-  <!-- BOOKING FORM -->
-  <section id="anfragen">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="eyebrow"><span class="hanko"></span>Jetzt anfragen</div>
-        <h2>Reserviere deine Tour.</h2>
-        <p class="lede">Fülle das Formular aus – ich melde mich innerhalb von 24–48 Stunden mit allen Details.</p>
-      </div>
-
-      <form class="form-card reveal" id="bookingForm">
-        <div class="form-grid">
-          <div class="field">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Dein Name" required>
-          </div>
-          <div class="field">
-            <label for="email">E-Mail</label>
-            <input type="email" id="email" name="email" placeholder="du@beispiel.de" required>
-          </div>
-          <div class="field">
-            <label for="date">Wunschdatum</label>
-            <input type="date" id="date" name="date" required>
-          </div>
-          <div class="field">
-            <label for="people">Personenanzahl</label>
-            <select id="people" name="people" required>
-              <option value="">Bitte wählen</option>
-              <option>1 Person</option>
-              <option>2 Personen</option>
-              <option>3 Personen</option>
-              <option>4 Personen</option>
-              <option>5 Personen</option>
-            </select>
-          </div>
-          <div class="field full">
-            <label for="message">Nachricht</label>
-            <textarea id="message" name="message" placeholder="Erzähl mir von deinen Interessen oder besonderen Wünschen …"></textarea>
-          </div>
-        </div>
-        <div class="form-foot">
-          <button type="submit" class="btn btn-primary">Anfrage senden</button>
-          <span class="form-msg" id="formMsg"></span>
-        </div>
-      </form>
-    </div>
-  </section>
-
   <!-- URGENCY -->
   <section class="section-alt">
     <div class="container">
       <div class="urgency reveal">
-        <p>Bitte buche möglichst frühzeitig. Die Termine sind oft schnell ausgebucht.</p>
+        <p>Bitte melde dich möglichst frühzeitig. Die Termine sind oft schnell ausgebucht.</p>
       </div>
     </div>
   </section>
@@ -646,34 +599,6 @@
 
   // footer year
   document.getElementById('year').textContent = new Date().getFullYear();
-
-  // 予約フォーム: 送信するとメールアプリが hinahina112317@gmail.com 宛の
-  // 下書きを開いた状態で立ち上がる(バックエンド不要)
-  const form = document.getElementById('bookingForm');
-  const formMsg = document.getElementById('formMsg');
-
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const date = document.getElementById('date').value;
-    const people = document.getElementById('people').value;
-    const message = document.getElementById('message').value;
-
-    const subject = encodeURIComponent('Tour-Anfrage von ' + name);
-    const body = encodeURIComponent(
-      'Name: ' + name + '\n' +
-      'E-Mail: ' + email + '\n' +
-      'Wunschdatum: ' + date + '\n' +
-      'Personenanzahl: ' + people + '\n\n' +
-      'Nachricht:\n' + message
-    );
-    window.location.href = 'mailto:hinahina112317@gmail.com?subject=' + subject + '&body=' + body;
-
-    formMsg.textContent = 'Danke! Dein E-Mail-Programm öffnet sich mit deiner Anfrage – bitte sende die E-Mail dort noch ab.';
-    formMsg.style.color = 'var(--red-deep)';
-    formMsg.classList.add('show');
-  });
 </script>
 
 </body>
